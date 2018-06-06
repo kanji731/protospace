@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit]
+  before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
     @prototypes = Prototype.all
@@ -26,6 +26,9 @@ class PrototypesController < ApplicationController
   end
 
   def update
+    @prototype.update(prototype_params)
+    @prototype.captured_images.build
+    redirect_to :root
   end
 
   private
