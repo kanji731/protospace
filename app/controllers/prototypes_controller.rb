@@ -23,10 +23,11 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
-    @prototype.update(prototype_params)
+    @prototype.update(update_prototype_params)
     @prototype.captured_images.build
     redirect_to :root
   end
@@ -44,6 +45,16 @@ class PrototypesController < ApplicationController
       :concept,
       :user_id,
       captured_images_attributes: [:content, :status]
+    )
+  end
+
+  def update_prototype_params
+    params.require(:prototype).permit(
+      :title,
+      :catch_copy,
+      :concept,
+      :user_id,
+      captured_images_attributes: [:content, :status, :_destroy, :id]
     )
   end
 end
