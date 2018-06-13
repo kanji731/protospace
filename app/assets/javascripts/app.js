@@ -1,9 +1,28 @@
+
+
 $(function(){
-  $( '#prototype_captured_images_attributes_0_content' ).on('click',function(e){
-    var  obj =e.target
-    console.log(obj);
-  });
+    $('#file').change(function(){
+        $('img').remove();
+        var file = $(this).prop('files')[0];
+        if(!file.type.match('image.*')){
+            return;
+        }
+        var fileReader = new FileReader();
+        fileReader.onloadend = function() {
+            $('#result').html('<img src="' + fileReader.result + '"/>');
+        }
+        fileReader.readAsDataURL(file);
+    });
 });
+
+
+// $(function(){
+//   $( '#prototype_captured_images_attributes_0_content' )ready.on('click',function(e){
+//     var  obj =e.target
+//     console.log(obj);
+//   });
+// });
+
 
 
 // $(function(){
