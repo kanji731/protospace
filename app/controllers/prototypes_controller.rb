@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.all
@@ -30,6 +30,11 @@ class PrototypesController < ApplicationController
     @prototype.update(update_prototype_params)
     @prototype.captured_images.build
     redirect_to :root
+  end
+
+  def destroy
+    @prototype.destroy if current_user.id == @prototype.user_id
+    redirect_to :root, notice: '削除したよー'
   end
 
   private
