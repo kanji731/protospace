@@ -313,6 +313,18 @@ body {
     }
   }
 
+// ----------------------
+  .proto-tag-list {
+    overflow: hidden;
+    font-size: 1.2rem;
+    padding: 10px 0;
+
+    .proto-tag {
+      float: left;
+    }
+  }
+// ----------------------
+
   .btn {
     font-size: 1rem;
     padding: 5px;
