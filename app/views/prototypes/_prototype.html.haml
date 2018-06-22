@@ -9,3 +9,12 @@
           = link_to prototype.user.name, user_path(prototype.user)
         .proto-posted
           = prototype.posted_date
+      .proto-tag-list
+        .proto-tags
+          = link_to "tagtag", "https://google.co.jp", class: "btn btn-default col-lg-1"
+
+
+/      .proto-tag-list
+/        - prototype.prototype_tags.each do |tag|
+/          .proto-tags
+/            = link_to tag.tagname, user_path(tag), class: "btn btn-default col-lg-1"
