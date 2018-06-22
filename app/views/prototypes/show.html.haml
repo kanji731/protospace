@@ -35,10 +35,21 @@
       %h4 Concept
       %p
         = @prototype.concept
+
+    / 仮置きで追加（タグを入力してもらう箇所）
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li
-          %a{href: "#", class: "btn btn-default"} iPad
+          %a{href: "#", class: "btn btn-default"} taggggggggg
         %li
-          %a{href: "#", class: "btn btn-default"} wireframe
+          %a{href: "#", class: "btn btn-default"} tagg
+
+/ 本当はここから下を追加（タグを入力してもらう箇所）
+/    .col-md-3
+/      %h4 Tag List
+/      %ul.proto-tag-list.list-inline
+/        - @prototype.prototype_tags.each do |tag|
+/          %li
+/            %a{href: "#", class: "btn btn-default"}
+/              = tag.tagname
